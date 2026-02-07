@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shonel.base.eth Coin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #0a2cff, #02091f);
+      color: #9fd9ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #021a3a, #032b66);
+      border-radius: 20px;
+      padding: 24px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 0 35px rgba(0, 150, 255, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .coin {
+      width: 140px;
+      margin-bottom: 16px;
+      animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    h2 {
+      margin: 10px 0 6px;
+      color: #bde7ff;
+    }
+
+    .handle {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 14px;
+    }
+
+    .stats {
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00b4ff, #0077ff);
+      color: #00132e;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(0,180,255,0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img
+      class="coin"
+      src="https://i.ibb.co/7Q7zjBp/A-promotional-digital-digital-image-features-a-blu.png"
+      alt="Shonel.base.eth Coin"
+    />
+    <h2>Shonel Coin</h2>
+    <div class="handle">@shonel.base.eth</div>
+
+    <div class="stats">
+      💎 Holders: <span id="holders">1245</span><br>
+      🔄 Supply: <span id="supply">50000</span><br>
+      ⚡ Tx Today: <span id="tx">23</span>
+    </div>
+
+    <a href="https://base.org" target="_blank" class="btn">Claim / Tip</a>
+  </div>
+
+  <script>
+    function updateStats() {
+      document.getElementById("holders").textContent =
+        Math.floor(1200 + Math.random() * 200);
+      document.getElementById("supply").textContent =
+        Math.floor(50000 + Math.random() * 3000);
+      document.getElementById("tx").textContent =
+        Math.floor(10 + Math.random() * 40);
+    }
+
+    setInterval(updateStats, 3000);
+  </script>
+
+</body>
+</html>
